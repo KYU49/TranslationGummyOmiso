@@ -33,4 +33,4 @@
 ## うまく動かない場合
 ### セキュリティ的にlocalhostへの接続が制限されている場合
 * 「OmisoServer.ps1」をメモ帳などで開き、16行目の「$true」を「$false」に書き換える。
-* Omiso
+* 「OmisoBookmarklet.js」から「localhostEnable=true」を検索し、「localhostEnable=false」に書き換えて、ブックマークの編集をやり直す。
