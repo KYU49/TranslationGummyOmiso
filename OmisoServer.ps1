@@ -8,8 +8,12 @@
 # http://+:80/Temporary_Listen_Addresses/?「翻訳したい文字列(encodeが必要)」
 
 # Chromeの場所を指定
-$chrome = "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+# $chrome = "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+# $chrome = "C:\Program Files\Google\Chrome\Application\chrome.exe"
 $chrome = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+
+# localhostへアクセスできない場合は$falseを指定
+$localhost_enable = $true
 
 # DeepLのURLと何語から何語に変化するかを入力
 $deepl = "https://www.deepl.com/translator#en/ja/"
@@ -17,9 +21,12 @@ $deepl = "https://www.deepl.com/translator#en/ja/"
 # .NetでローカルHTTPサーバーを作成
 $listener = New-Object Net.HttpListener
 
-# セキュリティ的にlocalhostに接続できない場合は下記のコメントアウトを入れ替えること
-$listener.Prefixes.Add("http://localhost:8000/")
-# $listener.Prefixes.Add("http://+:80/Temporary_Listen_Addresses/")
+# セキュリティ的にlocalhostに接続できない場合用に場合分け
+if($localhost_enable){
+    $listener.Prefixes.Add("http://localhost:8000/")
+}else{
+    $listener.Prefixes.Add("http://+:80/Temporary_Listen_Addresses/")
+}
 
 try {
     # サーバースタート
