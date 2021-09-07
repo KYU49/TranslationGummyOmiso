@@ -1,0 +1,2 @@
+# TranslationGummyOmiso
+岩崎 修登 氏の開発したTranslation Gummyに触発して作ったインストールに制限のある環境用のほん訳コンニャク
