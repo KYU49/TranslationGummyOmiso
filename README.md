@@ -16,18 +16,20 @@
 * ダウンロードした「OmisoServer.ps1」を右クリックし、「プロパティ(R)」を開く。
 * 「全般」タブの下部の「セキュリティ: ～～」の「許可する」をチェックして、「OK」。
 * 「OmisoServer.ps1」をメモ帳などで開き、13行目の「$chrome =」の後にChrome.exeのパスを入力する。  
-†ほとんどの場合は11行目か12行目に書いた場所にあるはず。
+※ほとんどの場合は11行目か12行目に書いてある場所にあるはず。
 * ブラウザで適当なページをブックマークする。
 ### Firefoxの場合
 * 先程のブックマークを右クリック。
 * 「ブックマークを編集」をクリック。
 * 「名前(N)」に任意の名前(『翻訳』など)を入力。
-* 「URL(U)」に「[OmisoBookmarklet.js](./OmisoBookmarklet.js)」内の文字列をコピペ。
+* 「URL(U)」に「[OmisoBookmarklet.js](./OmisoBookmarklet.js)」内の文字列をコピペ。  
+※「javascript:class%20Trans～(中略)～%3B%7Dvoid(0);」
 ### Chromeの場合
 * 先程のブックマークを右クリック。
 * 「編集...」をクリック。
 * 「名前」に任意の名前(『翻訳』など)を入力。
-* 「URL」に「[OmisoBookmarklet.js](./OmisoBookmarklet.js)」内の文字列をコピペ。
+* 「URL」に「[OmisoBookmarklet.js](./OmisoBookmarklet.js)」内の文字列をコピペ。  
+※「javascript:class%20Trans～(中略)～%3B%7Dvoid(0);」
 ## 使用方法
 * ダウンロードしたStartOmisoServer.batをクリックすると、コマンドプロンプトが開く。
 * コマンドプロンプトが開いたまま、翻訳したい論文ページをブラウザで開く。
