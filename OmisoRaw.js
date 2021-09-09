@@ -1,4 +1,3 @@
-javascript:
 const localhostEnable = true;
 const translator = class {
     static id = 0;

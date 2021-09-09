@@ -1,9 +1,9 @@
 # Translation Gummy Omiso
-岩崎 修登 氏の開発したTranslation Gummyに触発して作ったインストールに制限のある環境用、論文ページ専用のほん訳コンニャクです。
+[岩崎 修登 氏](https://twitter.com/cabernet_rock)の開発した[Translation Gummy](https://github.com/iwasakishuto/Translation-Gummy)に触発して作った「インストールに制限のある環境用」、論文ページ専用のほん訳コンニャクです。
 
 ## 概要
 * 論文ページのRead OnlineのページをそのままDeepLで翻訳する。
-* 会社のソフトウェアのインストールに制限がある環境でも使用可能。
+* 会社などでソフトウェアのインストールに制限がある環境でも使用可能。
 * ローカルで翻訳サーバーを起動、ブラウザ上でブックマークレットを使用することで翻訳する。
 * Chromeだけは必須。
 * ブラウザ用のブックマークレットはFirefox, Chrome, Edgeで動作確認。
@@ -30,7 +30,17 @@
 * ダウンロードしたStartOmisoServer.batをクリックすると、コマンドプロンプトが開く。
 * コマンドプロンプトが開いたまま、翻訳したい論文ページをブラウザで開く。
 * 先ほど作成した「翻訳」ブックマークを開くと、10秒ちょっとで翻訳される。
+
+## 仕組み
+* batファイルからPowerShell Scriptを呼び出して、.NetのHttpListenerという機能でローカルサーバーを作っています。
+* ブラウザ上ではブックマークレットで、\<p\>タグの中身を順にローカルサーバーにGetで送ります。
+* ローカルサーバーでは、Headless Chromeを起動し、Getリクエストで渡された文字列をDeepLで翻訳させます。
+* Headless Chromeを使用しているため、時間が経てば翻訳された文字列が描画されるため、それを取得します。
+* 取得した文字列はリクエスト元にJSONPとして返却されます。
+* リクエスト元のブックマークレットがcallbackを受け取り、翻訳後の文字列に置換します。
 ## うまく動かない場合
 ### セキュリティ的にlocalhostへの接続が制限されている場合
 * 「OmisoServer.ps1」をメモ帳などで開き、16行目の「$true」を「$false」に書き換える。
 * 「OmisoBookmarklet.js」から「localhostEnable=true」を検索し、「localhostEnable=false」に書き換えて、ブックマークの編集をやり直す。
+## 参考
+* [管理者権限のないプレーンなWindowsでWebサーバを立てる戦い](https://qiita.com/koyoru1214/items/721e528c86ee2baff871)
