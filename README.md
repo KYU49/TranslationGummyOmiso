@@ -11,7 +11,8 @@
 
 ## 導入方法
 ### 共通
-* 「[OmisoServer.ps1](./OmisoServer.ps1)」,「 [StartOmisoServer.bat](./StartOmisoServer.bat)」をダウンロードして、同じディレクトリに保存する。
+* 「[OmisoServer.ps1](./OmisoServer.ps1)」,「 [StartOmisoServer.bat](./StartOmisoServer.bat)」をダウンロード†して、同じディレクトリに保存する。  
+†リンクを開いた後、「Raw」ボタンを右クリックして、名前を付けて保存。
 * 「OmisoServer.ps1」をメモ帳などで開き、13行目の「$chrome =」の後にChrome.exeのパスを入力する。  
 †ほとんどの場合は11行目か12行目に書いた場所にあるはず。
 * ブラウザで適当なページをブックマークする。
