@@ -39,6 +39,9 @@ class Translator{
 capsule=new class{
     constructor(){
         this.init();
+        this.timer = setTimeout(function(){
+            alert("OmisoServer.ps1が応答していない可能性があります。");
+        }, 30000);
     }
     init(){
         window.button = {
@@ -95,6 +98,7 @@ capsule=new class{
         });
     }
     callback(response){
+        clearTimeout(this.timer);
         Translator.list[response.translationId].callback(response.result);
     }
 };
