@@ -30,7 +30,7 @@ if($localhost_enable){
 }else{
     $listener.Prefixes.Add("http://+:80/Temporary_Listen_Addresses/")
 }
-
+"Translation Gummi Omiso server is running..."
 
 try {
     # サーバースタート
