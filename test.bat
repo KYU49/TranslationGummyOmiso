@@ -1,1 +1,0 @@
-PowerShell -ExecutionPolicy RemoteSigned "".\OmisoServerAsync.ps1"
