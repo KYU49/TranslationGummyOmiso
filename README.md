@@ -46,7 +46,7 @@
 ## うまく動かない場合
 ### セキュリティ的にlocalhostへの接続が制限されている場合
 * 「OmisoServer.ps1」をメモ帳などで開き、16行目の「$true」を「$false」に書き換える。
-* 「OmisoBookmarklet.js」から「localhostEnable=true」を検索し、「localhostEnable=false」に書き換えて、ブックマークの編集をやり直す。
+* 「OmisoBookmarklet.js」から「localhostEnable%3Dtrue」を検索し、「localhostEnable%3Dfalse」に書き換えて、ブックマークの編集をやり直す。
 ### インターネットが著しく遅い場合
 * 「OmisoServer.ps1」をメモ帳などで開き、77行目(たぶん)の「--virtual-time-budget=10000」の10000を20000など、少し大きい数字に設定してみてください。
 ## 参考
