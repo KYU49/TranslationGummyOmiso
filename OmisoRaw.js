@@ -29,7 +29,7 @@ class Translator{
         this.translated = !this.translated;
     }
     sendTranslate(text, translationId){
-        let url = this.localhostEnable?"http://localhost:8000/?":"http://+:80/Temporary_Listen_Addresses/?";
+        let url = this.localhostEnable?"http://localhost:8000/?":"http://127.0.0.1/Temporary_Listen_Addresses/?";
         let script = document.createElement("script");
         script.type = 'text/javascript';
         script.src = url + encodeURIComponent(text).replace(/%2F/g, "%5C%2F") + "&" + translationId;

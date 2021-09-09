@@ -5,7 +5,7 @@
 # 下記URLにアクセスすると、翻訳後の文字列をJSONPで返す。
 # http://localhost:8000/?「翻訳したい文字列(encodeが必要)」&「ID (そのまま返ってくる)」
 # localhostへのアクセスに制限がある場合は、コード中のコメントアウトを入れ替えて、下記のURLを使用。
-# http://+:80/Temporary_Listen_Addresses/?「翻訳したい文字列(encodeが必要)」&「ID (そのまま返ってくる)」
+# http://127.0.0.1/Temporary_Listen_Addresses/?「翻訳したい文字列(encodeが必要)」&「ID (そのまま返ってくる)」
 
 # Chromeの場所を指定
 # $chrome = "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
