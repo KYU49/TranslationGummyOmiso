@@ -1,5 +1,5 @@
 # Translation Gummy Omiso
-[岩崎 修登 氏](https://twitter.com/cabernet_rock)の開発した[Translation Gummy](https://github.com/iwasakishuto/Translation-Gummy)に触発して作ったインストールに制限のある環境用、論文ページ専用のほん訳コンニャクです。
+[岩崎 修登 氏](https://twitter.com/cabernet_rock)の開発した[Translation Gummy](https://github.com/iwasakishuto/Translation-Gummy)に触発して作ったインストールに制限のある環境用、論文ページ専用のほん訳コンニャクお味噌味です。
 
 ## 概要
 * 論文ページのRead OnlineのページをそのままDeepLで翻訳する。
@@ -14,7 +14,8 @@
 * 「[OmisoServer.ps1](./OmisoServer.ps1)」,「[StartOmisoServer.bat](./StartOmisoServer.bat)」をダウンロードして、同じディレクトリに保存する。  
 ※ダウンロード方法: それぞれのファイルを開いた後、「Raw」ボタンを右クリック、名前を付けて保存。このとき、名前や拡張子が正しいことを確認。
 * ダウンロードした「OmisoServer.ps1」を右クリックし、「プロパティ(R)」を開く。
-* 「全般」タブの下部の「セキュリティ: ～～」の「許可する」をチェックして、「OK」。
+* 「全般」タブの下部の「セキュリティ: ～～」の「許可する」をチェックして、「OK」。  
+※下部に「セキュリティ: ~」がない場合はこの操作は不要。
 * 「OmisoServer.ps1」をメモ帳などで開き、13行目の「$chrome =」の後にChrome.exeのパスを入力する。  
 ※ほとんどの場合は11行目か12行目に書いてある場所にあるはず。
 * ブラウザで適当なページをブックマークする。
