@@ -12,10 +12,10 @@
 ## 導入方法
 ### 共通
 * 「**[ここをクリック](https://github.com/KYU49/TranslationGummyOmiso/archive/refs/heads/main.zip)**」してzipファイルをダウンロードし、解凍する。  
-    * セキュリティ的にダウンロードができない場合
-        * 「[OmisoServer.ps1](./OmisoServer.ps1)」,「[StartOmisoServer.bat](./StartOmisoServer.bat)」を開く。
-        * 右上の「Raw」から文字列を表示して、それぞれを別のメモ帳にコピペする。
-        * それぞれを「OmisoServer.ps1」「StartOmisoServer.bat」の名前で保存する。
+    ※セキュリティ的にダウンロードができない場合
+    * 「[OmisoServer.ps1](./OmisoServer.ps1)」,「[StartOmisoServer.bat](./StartOmisoServer.bat)」を開く。
+    * 右上の「Raw」から文字列を表示して、それぞれを別のメモ帳にコピペする。
+    * それぞれを「OmisoServer.ps1」「StartOmisoServer.bat」の名前で保存する。
 * ブラウザで「**[このリンク](https://kyu49.github.io/TranslationGummyOmiso/)**」を開き、指示に従う。
 ## 使用方法
 * ダウンロードしたディレクトリにある「StartOmisoServer.bat」をクリックすると、コマンドプロンプトが開く。
