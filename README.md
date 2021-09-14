@@ -16,9 +16,6 @@
         * 「[OmisoServer.ps1](./OmisoServer.ps1)」,「[StartOmisoServer.bat](./StartOmisoServer.bat)」を開く。
         * 右上の「Raw」から文字列を表示して、それぞれを別のメモ帳にコピペする。
         * それぞれを「OmisoServer.ps1」「StartOmisoServer.bat」の名前で保存する。
-* ダウンロードした「OmisoServer.ps1」を右クリックし、「プロパティ(R)」を開く。
-* 「全般」タブの下部の「セキュリティ: ～～」の「許可する」をチェックして、「OK」。  
-    * 下部に「セキュリティ: ~」がない場合はこの操作は不要。
 * ブラウザで「**[このリンク](https://kyu49.github.io/TranslationGummyOmiso/)**」を開き、指示に従う。
 ## 使用方法
 * ダウンロードしたディレクトリにある「StartOmisoServer.bat」をクリックすると、コマンドプロンプトが開く。
