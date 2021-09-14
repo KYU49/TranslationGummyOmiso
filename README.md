@@ -40,6 +40,7 @@
 * 「OmisoServer.ps1」をメモ帳などで開き、11行目の「$chrome =」の後にChrome.exeのパスを入力する。前後を「"」で挟むこと。
 ## 参考
 * [管理者権限のないプレーンなWindowsでWebサーバを立てる戦い](https://qiita.com/koyoru1214/items/721e528c86ee2baff871)
+* [ダウンロードしたファイルの「ブロック解除」をコマンドで](https://qiita.com/gentaro/items/3beb65a8f2f89089a042)
 
 
 ## 更新履歴
