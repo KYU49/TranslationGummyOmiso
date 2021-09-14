@@ -32,8 +32,8 @@
 * リクエスト元のブックマークレットがcallbackを受け取り、翻訳後の文字列に置換します。
 ## うまく動かない場合
 ### セキュリティ的にlocalhostへの接続が制限されている場合
-* 「OmisoServer.ps1」をメモ帳などで開き、16行目の「$true」を「$false」に書き換える。
-* 「OmisoBookmarklet.js」から「localhostEnable%3Dtrue」を検索し、「localhostEnable%3Dfalse」に書き換えて、ブックマークの編集をやり直す。
+* 「OmisoServer.ps1」をメモ帳などで開き、22行目の「$true」を「$false」に書き換える。
+* ブラウザで「**[このリンク](https://kyu49.github.io/TranslationGummyOmiso/)**」を開き、指示に従う。
 ### インターネットが著しく遅い場合
 * 「OmisoServer.ps1」をメモ帳などで開き、77行目(たぶん)の「--virtual-time-budget=10000」の10000を20000など、少し大きい数字に設定してみてください。
 ### Chrome not foundと表示される場合
