@@ -19,8 +19,6 @@
 * ダウンロードした「OmisoServer.ps1」を右クリックし、「プロパティ(R)」を開く。
 * 「全般」タブの下部の「セキュリティ: ～～」の「許可する」をチェックして、「OK」。  
     * 下部に「セキュリティ: ~」がない場合はこの操作は不要。
-* 「OmisoServer.ps1」をメモ帳などで開き、13行目の「$chrome =」の後にChrome.exeのパスを入力する。  
-    * ほとんどの場合は11行目か12行目に書いてある場所にあるはず。
 * ブラウザで「**[このリンク](https://kyu49.github.io/TranslationGummyOmiso/)**」を開き、指示に従う。
 ## 使用方法
 * ダウンロードしたディレクトリにある「StartOmisoServer.bat」をクリックすると、コマンドプロンプトが開く。
@@ -41,6 +39,8 @@
 * 「OmisoBookmarklet.js」から「localhostEnable%3Dtrue」を検索し、「localhostEnable%3Dfalse」に書き換えて、ブックマークの編集をやり直す。
 ### インターネットが著しく遅い場合
 * 「OmisoServer.ps1」をメモ帳などで開き、77行目(たぶん)の「--virtual-time-budget=10000」の10000を20000など、少し大きい数字に設定してみてください。
+### Chrome not foundと表示される場合
+* 「OmisoServer.ps1」をメモ帳などで開き、11行目の「$chrome =」の後にChrome.exeのパスを入力する。前後を「"」で挟むこと。
 ## 参考
 * [管理者権限のないプレーンなWindowsでWebサーバを立てる戦い](https://qiita.com/koyoru1214/items/721e528c86ee2baff871)
 

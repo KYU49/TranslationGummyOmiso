@@ -8,9 +8,15 @@
 # http://127.0.0.1/Temporary_Listen_Addresses/?「翻訳したい文字列(encodeが必要)」&「ID (そのまま返ってくる)」
 
 # Chromeの場所を指定
-# $chrome = "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
-# $chrome = "C:\Program Files\Google\Chrome\Application\chrome.exe"
-$chrome = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+$chrome = "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+if(!(Test-Path $chrome)){
+    $chrome = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+    if(!(Test-Path $chrome)){
+        Write-Host "Exception: Chrome not found"
+        $host.UI.RawUI.ReadKey() | Out-Null
+        return
+    }
+}
 
 # localhostへアクセスできない場合は$falseを指定
 $localhost_enable = $true
