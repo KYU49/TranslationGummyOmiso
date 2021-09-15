@@ -10,7 +10,7 @@
 * いんたーねっとえくす...そんなブラウザはいなかった。
 
 ## 導入方法
-* 「**[ここをクリック](https://github.com/KYU49/TranslationGummyOmiso/archive/refs/heads/main.zip)**」してzipファイルをダウンロードし、解凍する。  
+* 「**[ここをクリック](./releases/latest/download/TranslationGummyOmiso.zip)**」してzipファイルをダウンロードし、解凍する。  
 * ブラウザで「**[このリンク](https://kyu49.github.io/TranslationGummyOmiso/)**」を開き、指示に従ってブックマークレットを登録する。
 ### セキュリティ的にダウンロードができない場合
 * 「[OmisoServer.ps1](./OmisoServer.ps1)」,「[StartOmisoServer.bat](./StartOmisoServer.bat)」を開く。
