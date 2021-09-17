@@ -1,5 +1,5 @@
 # Translation Gummy Omiso
-[岩崎 修登 氏](https://twitter.com/cabernet_rock)の開発した[Translation Gummy](https://github.com/iwasakishuto/Translation-Gummy)に触発して作ったインストールに制限のある環境用、論文ページ専用のほん訳コンニャクお味噌味。
+DeepLによる論文ページのページ翻訳をインストールに制限のある環境でも実現したほん訳コンニャクお味噌味。
 
 ## 概要
 * 論文ページのRead OnlineのページをそのままDeepLで翻訳する。
@@ -8,6 +8,7 @@
 * Chromeだけは必須。
 * ブラウザ用のブックマークレットはFirefox, Chrome, Edgeで動作確認。
 * いんたーねっとえくす...そんなブラウザはいなかった。
+* [岩崎 修登 氏](https://twitter.com/cabernet_rock)の開発した[Translation Gummy](https://github.com/iwasakishuto/Translation-Gummy)に触発されて作成。
 
 ## 導入方法
 * 「**[ここをクリック](../../releases/latest/download/TranslationGummyOmiso.zip)**」してzipファイルをダウンロードし、解凍する。  
@@ -37,6 +38,13 @@
 * 「OmisoServer.ps1」をメモ帳などで開き、83行目(たぶん)の「--virtual-time-budget=10000」の10000を20000など、少し大きい数字に設定する。
 ### Chrome not foundと表示される場合
 * 「OmisoServer.ps1」をメモ帳などで開き、11行目の「$chrome =」の後にChrome.exeのパスを入力する。※前後を「"」で挟むこと。
+### 翻訳されるべき文章が消えていく
+* 使いすぎでDeepL側からアクセス制限がかかっていると思われる。
+* 2 hほどDeepLを使わないと改善されるはず。
+* 同一IPで使用している人が多いと、自分の使用量が少なくても起こりうるため注意。
+### そもそもps1やbatも使用が禁止
+* 機能が大幅に落ちるが、IE以外なら動く「[EasyDeepL](https://github.com/KYU49/EasyDeepL)」の使用を推奨。
+
 ## 参考
 * [管理者権限のないプレーンなWindowsでWebサーバを立てる戦い](https://qiita.com/koyoru1214/items/721e528c86ee2baff871)
 * [ダウンロードしたファイルの「ブロック解除」をコマンドで](https://qiita.com/gentaro/items/3beb65a8f2f89089a042)
