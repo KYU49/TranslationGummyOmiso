@@ -1,6 +1,7 @@
 class Translator{
     static id = 0;
     static list = {};
+    static timer = null;
     constructor(p) {
         this.localhostEnable = true;
         this.p = p;
@@ -9,6 +10,7 @@ class Translator{
         this.translate = "翻訳中";
         this.translated = false;
         this.called = false;
+        this.hash = "";
         this.init();
     }
     init(){
@@ -20,9 +22,18 @@ class Translator{
         }
     }
     callback(result){
-        this.translate = result;
-        this.translated = false;
-        this.switch();
+        if(Translator.timer != null){
+            clearTimeout(Translator.timer);
+            Translator.timer = null;
+        }
+        if(result.length > 0){
+            this.translate = result;
+            this.translated = false;
+            localStorage.setItem(this.hash, result)
+            this.switch();
+        }else{
+            alert("DeepLの翻訳上限に達した可能性があります。")
+        }
     }
     switch(){
         this.sendTranslate();
@@ -37,20 +48,38 @@ class Translator{
         if(this.called){
             return;
         }
+        if(Translator.timer == null){
+        Translator.timer = setTimeout(function(){
+                alert("OmisoServer.ps1が応答していない可能性があります。");
+            }, 30000);
+        }
+        this.hash = this.simpleHash(this.original);
+        let savedValue = localStorage.getItem(this.hash);
         this.called = true;
-        let url = this.localhostEnable?"http://localhost:8000/?":"http://127.0.0.1/Temporary_Listen_Addresses/?";
-        let script = document.createElement("script");
-        script.type = 'text/javascript';
-        script.src = url + encodeURIComponent(this.p.innerText).replace(/%2F/g, "%5C%2F") + "&" + this.tranlatorId;
-        document.body.appendChild(script);
+        if(savedValue == null){
+            let url = this.localhostEnable?"http://localhost:8000/?":"http://127.0.0.1/Temporary_Listen_Addresses/?";
+            let script = document.createElement("script");
+            script.type = 'text/javascript';
+            script.src = url + encodeURIComponent(this.p.innerText).replace(/%2F/g, "%5C%2F") + "&" + this.tranlatorId;
+            document.body.appendChild(script);
+        }else{
+            this.callback(savedValue);
+        }
+    }
+    simpleHash(str){
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+          const char = str.charCodeAt(i);
+          hash = (hash << 5) - hash + char;
+          hash &= hash; // Convert to 32bit integer
+        }
+        return new Uint32Array([hash])[0].toString(36);
     }
 }
-capsule=new class{
+
+let capsule=new class{
     constructor(){
         this.init();
-        this.timer = setTimeout(function(){
-            alert("OmisoServer.ps1が応答していない可能性があります。");
-        }, 30000);
     }
     init(){
         window.button = {
@@ -117,7 +146,6 @@ capsule=new class{
         });
     }
     callback(response){
-        clearTimeout(this.timer);
         Translator.list[response.translationId].callback(response.result);
     }
 };
