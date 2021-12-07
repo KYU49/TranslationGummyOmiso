@@ -32,7 +32,7 @@ class Translator{
             localStorage.setItem(this.hash, result);
             this.switch();
         }else{
-            alert("DeepLの翻訳上限に達した可能性があります。")
+            alert("DeepLの翻訳上限に達した可能性があります。");
         }
     }
     switch(){
@@ -71,7 +71,7 @@ class Translator{
         for (let i = 0; i < str.length; i++) {
           const char = str.charCodeAt(i);
           hash = (hash << 5) - hash + char;
-          hash &= hash; // Convert to 32bit integer
+          hash &= hash;
         }
         return new Uint32Array([hash])[0].toString(36);
     }
