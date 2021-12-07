@@ -29,7 +29,7 @@ class Translator{
         if(result.length > 0){
             this.translate = result;
             this.translated = false;
-            localStorage.setItem(this.hash, result)
+            localStorage.setItem(this.hash, result);
             this.switch();
         }else{
             alert("DeepLの翻訳上限に達した可能性があります。")
