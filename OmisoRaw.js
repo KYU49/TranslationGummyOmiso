@@ -7,17 +7,17 @@ class Translator{
         this.p = p;
         this.id = -1;
         this.original = p.innerHTML;
+        this.hash = this.simpleHash(this.original);
         this.translate = "翻訳中";
         this.translated = false;
         this.called = false;
-        this.hash = "";
         this.init();
     }
     init(){
         this.tranlatorId = Translator.id++;
         Translator.list[this.tranlatorId] = this;
         this.p.setAttribute("translatorId", String(this.tranlatorId));
-        if(this.tranlatorId < 5){
+        if(this.tranlatorId < 5 || localStorage.getItem(this.hash) != null){
             this.sendTranslate();
         }
     }
@@ -53,7 +53,6 @@ class Translator{
                 alert("OmisoServer.ps1が応答していない可能性があります。");
             }, 30000);
         }
-        this.hash = this.simpleHash(this.original);
         let savedValue = localStorage.getItem(this.hash);
         this.called = true;
         if(savedValue == null){
