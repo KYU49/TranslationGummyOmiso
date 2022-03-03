@@ -124,7 +124,7 @@ let capsule=new class{
                 button.state=1;
             },
             getP: function(p){
-                if(p.tagName == "P"){
+                if(p.tagName == "P" || p.tagName == "DIV"){
                     return p;
                 }else{
                     return button.getP(p.parentNode);
@@ -136,6 +136,15 @@ let capsule=new class{
             if(p[i].innerText.length > 200){
                 let t = new Translator(p[i]);
                 p[i].addEventListener("mouseover", function(e){
+                    button.hover(e);
+                });
+            }
+        }
+        let div = document.getElementsByTagName("div");
+        for(let i = 0; i < div.length; i++){
+            if(!div[i].getElementsByTagName("div") && !div[i].getElementsByTagName("p") && div[i].innerText.length > 200){
+                let t = new Translator(div[i]);
+                div[i].addEventListener("mouseover", function(e){
                     button.hover(e);
                 });
             }
